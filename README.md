@@ -1,4 +1,4 @@
-# Hung Blog
+# EngHung Blog
 
 Personal technology blog built with [Astro](https://astro.build/) and deployed to GitHub Pages.
 

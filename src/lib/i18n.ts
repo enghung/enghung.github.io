@@ -12,7 +12,7 @@ export const languageNames: Record<Lang, string> = {
 
 export const ui = {
   en: {
-    siteTitle: "Hung Blog",
+    siteTitle: "EngHung Blog",
     siteDescription: "Notes about software engineering, systems, and things I learn.",
     home: "Home",
     categories: "Categories",
@@ -55,7 +55,7 @@ export const ui = {
     copyCodeFailed: "Copy failed",
   },
   vi: {
-    siteTitle: "Hung Blog",
+    siteTitle: "EngHung Blog",
     siteDescription: "Ghi chú về software engineering, hệ thống, và những điều mình học được.",
     home: "Trang chủ",
     categories: "Chủ đề",
