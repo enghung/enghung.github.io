@@ -12,8 +12,9 @@ export const languageNames: Record<Lang, string> = {
 
 export const ui = {
   en: {
-    siteTitle: "EngHung Blog",
-    siteDescription: "Notes about software engineering, systems, and things I learn.",
+    siteTitle: "EngHung",
+    siteDescription:
+      "Lessons and notes from my English learning journey — grammar, vocabulary, pronunciation, and more.",
     home: "Home",
     categories: "Categories",
     series: "Series",
@@ -55,8 +56,9 @@ export const ui = {
     copyCodeFailed: "Copy failed",
   },
   vi: {
-    siteTitle: "EngHung Blog",
-    siteDescription: "Ghi chú về software engineering, hệ thống, và những điều mình học được.",
+    siteTitle: "EngHung",
+    siteDescription:
+      "Bài học và ghi chú trong hành trình học tiếng Anh — ngữ pháp, từ vựng, phát âm, và hơn thế nữa.",
     home: "Trang chủ",
     categories: "Chủ đề",
     series: "Chuỗi bài",
@@ -128,22 +130,22 @@ export function formatPostCount(lang: Lang, count: number) {
 
 export const categoryLabels = {
   en: {
-    claude: "Claude",
-    "web-development": "Web Development",
-    programming: "Programming",
-    devops: "DevOps",
-    database: "Database",
-    "system-design": "System Design",
-    notes: "Notes",
+    grammar: "Grammar",
+    vocabulary: "Vocabulary",
+    pronunciation: "Pronunciation",
+    skills: "Listening, Speaking, Reading & Writing",
+    culture: "Culture & Idioms",
+    "study-notes": "Study Notes",
+    resources: "Resources",
   },
   vi: {
-    claude: "Claude",
-    "web-development": "Web Development",
-    programming: "Lập trình",
-    devops: "DevOps",
-    database: "Cơ sở dữ liệu",
-    "system-design": "Thiết kế hệ thống",
-    notes: "Ghi chú",
+    grammar: "Ngữ pháp",
+    vocabulary: "Từ vựng",
+    pronunciation: "Phát âm",
+    skills: "Nghe – nói – đọc – viết",
+    culture: "Văn hóa & thành ngữ",
+    "study-notes": "Ghi chú học tập",
+    resources: "Tài nguyên",
   },
 } satisfies Record<Lang, Record<string, string>>;
 
