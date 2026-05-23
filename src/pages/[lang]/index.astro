@@ -1,0 +1,51 @@
+---
+import { getCollection } from "astro:content";
+import PostCard from "@/components/PostCard.astro";
+import Pagination from "@/components/Pagination.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import {
+  languages,
+  pageCount,
+  paginate,
+  postsByLang,
+  POSTS_PER_PAGE,
+  sortPosts,
+  type Lang,
+  ui,
+} from "@/lib/i18n";
+
+export function getStaticPaths() {
+  return languages.map((lang) => ({
+    params: { lang },
+    props: { lang },
+  }));
+}
+
+const lang = Astro.props.lang as Lang;
+const labels = ui[lang];
+const allPosts = await getCollection("blog");
+const allLangPosts = sortPosts(postsByLang(allPosts, lang));
+const totalPages = pageCount(allLangPosts, POSTS_PER_PAGE);
+const posts = paginate(allLangPosts, 1, POSTS_PER_PAGE);
+const basePath = `/${lang}/`;
+---
+
+<BaseLayout lang={lang}>
+  <section class="hero">
+    <h1>{labels.siteTitle}</h1>
+    <p>{labels.siteDescription}</p>
+  </section>
+
+  <section aria-labelledby="latest-posts">
+    <h2 id="latest-posts">{labels.latestPosts}</h2>
+    <div class="post-grid">
+      {posts.map((post) => <PostCard post={post} />)}
+    </div>
+    <Pagination
+      currentPage={1}
+      totalPages={totalPages}
+      basePath={basePath}
+      lang={lang}
+    />
+  </section>
+</BaseLayout>
